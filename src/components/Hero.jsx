@@ -11,7 +11,7 @@ export default function Hero(){
                 <h1>A Small Intro</h1>
             </div>
             <div className="hero-section">
-                <img className="hero-img" src="./src/assets/myphoto.jpg" alt="a photo of mee" />
+                <img className="hero-img" src="../src/assets/myphoto.jpg" alt="a photo of meo" />
                 <div className="hero-text">
                     <p className="bold greenText"> About Me </p>
                     <h2> Julián Arias - Software Engineer</h2>
