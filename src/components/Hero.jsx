@@ -1,4 +1,4 @@
-import myphoto from "src/assets/myphoto.jpg"
+import myphoto from "/src/assets/myphoto.jpg"
 
 export default function Hero(){
 
