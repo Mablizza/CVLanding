@@ -1,23 +1,30 @@
+import webDev from "/src/assets/webDev.jpg"
+import uxDesign from "/src/assets/ux-design.jpg"
+import socialMedia from "/src/assets/social-media.jpg"
+import test from "/src/assets/test.jpg"
+import videoEdit from "/src/assets/video-edit.jpg"
+import idea from "/src/assets/idea.jpg"
+
 export default function Skills(){
 
     const skillsArr = [
         {title: "Web Development",
-        icon: "/src/assets/webDev.png",
+        icon: webDev,
         description: "HTML/CSS/Javascript/REACT"},
         {title: "UI/UX Design",
-        icon: "/src/assets/ux-design.png",
+        icon: uxDesign,
         description: "Design of UI, protoype and testing of UX"},
         {title: "Brand Marketing",
-        icon: "/src/assets/social-media.png",
+        icon: socialMedia,
         description: "Google Ads, Meta Marketing, Ad creation and placement"},
         {title: "QA & Testing",
-        icon: "/src/assets/test.png",
+        icon: test,
         description: "Testing for Quality Assurance, and desired UI/UX."},
         {title: "Content Creation & Photo/Video Editing",
-        icon: "/src/assets/video-edit.png",
+        icon: videoEdit,
         description: "I can assist editing photos or video for website use, content creation or social media pressence."},
         {title: "Problem Solving",
-        icon: "/src/assets/idea.png",
+        icon: idea,
         description: "Part of why I love programming. Understand, Strategize and Implement."},
         ]
 
