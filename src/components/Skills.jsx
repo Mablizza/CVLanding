@@ -1,9 +1,9 @@
-import webDev from "/src/assets/webDev.jpg"
-import uxDesign from "/src/assets/ux-design.jpg"
-import socialMedia from "/src/assets/social-media.jpg"
-import test from "/src/assets/test.jpg"
-import videoEdit from "/src/assets/video-edit.jpg"
-import idea from "/src/assets/idea.jpg"
+import webDev from "/src/assets/webDev.png"
+import uxDesign from "/src/assets/ux-design.png"
+import socialMedia from "/src/assets/social-media.png"
+import test from "/src/assets/test.png"
+import videoEdit from "/src/assets/video-edit.png"
+import idea from "/src/assets/idea.png"
 
 export default function Skills(){
 
