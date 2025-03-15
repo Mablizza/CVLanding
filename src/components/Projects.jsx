@@ -21,9 +21,9 @@ export default function Projects(){
         const projectsElements = projectsArr.map( (project) =>
             <div key={project.title} className="project-box" >
 
-                <div className="bar-y"></div>
-                <div className="bar-x"></div>
-                <div className="bar-dot"></div>
+                <div className="bar-y hide"></div>
+                <div className="bar-x hide"></div>
+                <div className="bar-dot hide"></div>
 
                 <div className="project-img">
                     <img  src={project.icon} alt={`icon of ${project.title}`} />
@@ -44,7 +44,9 @@ export default function Projects(){
                 <p className="greyText">WORK</p>
                 <h1>Recent Projects </h1>
             </div>
-            {projectsElements}
+            <div className="projects-container">
+                {projectsElements}
+            </div>
         </>
     )
 }
