@@ -180,12 +180,19 @@ body {
   height: 25rem;
 }
 
+/* .project-img img:hover{
+  cursor: pointer;
+} */
 
 .project-text{
   background-color: #212121;
   align-content: center;
   padding-left: 3rem;
 }
+
+/* .project-text:hover{
+  cursor: pointer;
+} */
 
 .project-title{
   font-size: 1.8rem;
@@ -194,11 +201,40 @@ body {
 
 }
 
+.tag-container{
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: left;
+  gap: 1rem
+}
 .project-tag{
-  background-color: #009760;
+  /* background-color: #009760; */
+  color: #009760;
   width: fit-content;
   padding: 0 0.5rem;
   border-radius: 5px;
+  border: solid 1px #009760;
+  text-align: center;
+  padding-bottom: 2.5px;
+}
+
+.project-btn{
+    background-color: #009760;
+    color: rgba(255, 255, 255, 0.87);
+    width: fit-content;
+    padding: 0 0.5rem;
+    border-radius: 5px;
+    border: solid 1px #009760;
+    text-align: center;
+    padding-bottom: 2.5px;
+
+}
+
+.project-btn:hover, .project-btn:active{
+  cursor: pointer;
+  background-color: purple;
+  color: yellow;
+  border: yellow solid 1px;
 }
 
 /* .bar{
