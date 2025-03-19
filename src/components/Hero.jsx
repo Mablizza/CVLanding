@@ -17,12 +17,12 @@ export default function Hero(){
                 <div className="hero-text">
                     <p className="bold greenText"> About Me </p>
                     <h2> Julián Arias - Software Engineer</h2>
-                    <p> I started my career in finance and with an interest in entrepreneurship. 
-                        Focused on the continuous improvement of my workflows via automation I stumbled upon 
-                        Visual Basic programming in Excel/Windows. I found programming to be a true passion of
-                        mine which better suits my personality and strengths. Fully committed to programming as
-                        a part of my life going forward, this website is proof of a new humble beginning for me 
-                        as a software engineer.
+                    <p> I come from a background in finance and entrepreneurship, and I’m currently
+                        transitioning into software development. Over the years, I’ve founded and
+                        run businesses where I built and maintained websites, managed teams, and
+                        handled both technical and strategic decisions. My previous roles as Financial
+                        Analyst gave me a strong foundation in problem-solving and working closely 
+                        with various stakeholders — skills that continue to guide my work as a developer today.
                     </p>
                     <div className="hero-boxes">
                         <div className="hero-minibox">
