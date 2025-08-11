@@ -8,37 +8,48 @@ import idea from "/src/assets/idea.png"
 export default function Skills(){
 
     const skillsArr = [
-        {title: "Web Development",
-        icon: webDev,
-        description: "HTML/CSS/Javascript/REACT."},
-        {title: "UI/UX Design",
-        icon: uxDesign,
-        description: "Design of UI, protoype and testing of UX."},
-        {title: "Brand Marketing",
-        icon: socialMedia,
-        description: "Google Ads, Meta Marketing, Ad creation and placement."},
-        {title: "QA & Testing",
-        icon: test,
-        description: "Testing for Quality Assurance, and desired UI/UX."},
-        {title: "Content Creation & Photo/Video Editing",
-        icon: videoEdit,
-        description: "I can assist editing photos or video for website use, content creation or social media pressence."},
-        {title: "Problem Solving",
-        icon: idea,
-        description: "Part of why I love programming. Understand, Strategize and Implement."},
+        {
+            title: "Full-Stack Development",
+            icon: webDev,
+            description: "React, Node.js, Express, and modern JavaScript. I love building complete applications from database to user interface."
+        },
+        {
+            title: "Database Architecture",
+            icon: uxDesign,
+            description: "PostgreSQL, MySQL, MongoDB. Complex data modeling, query optimization, and scalable database design."
+        },
+        {
+            title: "Performance & SEO",
+            icon: test,
+            description: "Code optimization, SEO implementation, and user experience tuning. My InfoAutoCR project is proof this stuff works!"
+        },
+        {
+            title: "Data Processing",
+            icon: videoEdit,
+            description: "Web scraping with Puppeteer, API integrations, and real-time data processing. Love making messy data useful."
+        },
+        {
+            title: "Technical Leadership",
+            icon: idea,
+            description: "Agile development, team coordination, and project delivery. Led developers through complex implementations at Dunu506."
+        },
+        {
+            title: "Business Intelligence",
+            icon: socialMedia,
+            description: "Data analysis, process optimization, and stakeholder communication. My finance background helps me build software that actually solves business problems."
+        }
         ]
 
-        const skillsElements = skillsArr.map( (skill) =>
-            <div key={skill.title} className="skill-box" >
-                <div className="skill-img">
-                    <img  src={skill.icon} alt={`icon of ${skill.title}`} />
-                </div>
-
-                <div className="skill-title-underline">
-                <p className="skill-title">{skill.title}</p>
-                </div>
-                <p className="skill-desc greyTextLight">{skill.description}</p>
+    const skillsElements = skillsArr.map( (skill) =>
+        <div key={skill.title} className="skill-box" >
+            <div className="skill-img">
+                <img  src={skill.icon} alt={`icon of ${skill.title}`} />
             </div>
+            <div className="skill-title-underline">
+                <p className="skill-title">{skill.title}</p>
+            </div>
+            <p className="skill-desc greyTextLight">{skill.description}</p>
+        </div>
         )
 
 
@@ -46,7 +57,7 @@ export default function Skills(){
         <>
             <div className="section-header">
                 <p className="greyText">ABILITIES</p>
-                <h1>Some Of My Skills... </h1>
+                <h1>What I Bring to the Table</h1>
             </div>
             <div className="skills-container">
                 {skillsElements}

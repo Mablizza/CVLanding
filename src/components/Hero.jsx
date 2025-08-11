@@ -13,16 +13,17 @@ export default function Hero(){
                 <h1>A Small Intro</h1>
             </div>
             <div className="hero-section">
-                <img className="hero-img" src={myphoto} alt="a photo of miu" />
+                <img className="hero-img" src={myphoto} alt="a photo of me" />
                 <div className="hero-text">
                     <p className="bold greenText"> About Me </p>
                     <h2> Julián Arias - Software Engineer</h2>
-                    <p> I come from a background in finance and entrepreneurship, and I’m currently transitioning into
-                        software development. Over the years, I’ve founded and run businesses where I built and maintained
-                        websites, managed teams, and handled both technical and strategic decisions. My previous roles as
-                        a Financial Analyst gave me a strong foundation in problem-solving and data structuring for analysis,
-                        as well as experience working closely with various stakeholders—skills that continue to guide my work
-                        as a developer today.
+                    <p> I'm a full-stack software engineer who builds applications that people actually use. 
+                        My latest project serves 600+ active users monthly and keeps growing. I love combining 
+                        technical problem-solving with business thinking - probably thanks to my finance background 
+                        where I spent years analyzing data and optimizing processes. Now I channel that analytical 
+                        mindset into building software solutions that deliver real value. Whether it's architecting 
+                        a database, optimizing performance, or leading a development team, I approach each challenge 
+                        with both technical precision and strategic thinking.
                     </p>
                     <div className="hero-boxes">
                         <div className="hero-minibox">
@@ -39,12 +40,12 @@ export default function Hero(){
                         </div>
 
                         <div className="hero-minibox">
-                            <p className="bold">Phone No.</p>
-                            <p>+506-8723-3928</p>
+                            <p className="bold">Focus</p>
+                            <p>Full-Stack Development</p>
                         </div>
                     </div>
                     <div className="linkedIn-Btn" onClick={()=>goToLinkedIn()}>
-                        View CV
+                        View LinkedIn Profile
                     </div>
                 </div>
             </div>
