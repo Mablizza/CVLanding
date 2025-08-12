@@ -24,7 +24,7 @@ export default function Projects(){
             title: "MabLabz",
             tag: "#Portfolio",
             icon: MablabzLT,
-            description: "My freelance portfolio platform showcasing modern React development. Built with Vite for lightning-fast builds and Tailwind CSS for responsive design. Features internationalization (English/Spanish switching) and demonstrates component-based architecture. It's also where potential clients can learn about my services - though honestly, I'd prefer a steady part-time contract over freelancing!",
+            description: "My freelance portfolio platform showcasing modern React development. Built with Vite for lightning-fast builds and Tailwind CSS for responsive design. Features internationalization (English/Spanish switching) and demonstrates component-based architecture. It's also where potential clients can learn about my services - though honestly, I'd prefer a steady contract over freelancing!",
             url: "https://www.mablabz.com/",
             tech: "React • Vite • Tailwind CSS"
         }

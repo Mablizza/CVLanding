@@ -36,7 +36,7 @@ export default function Skills(){
         {
             title: "Business Intelligence",
             icon: socialMedia,
-            description: "Data analysis, process optimization, and stakeholder communication. My finance background helps me build software that actually solves business problems."
+            description: "Data analysis, process optimization, and stakeholder communication. I like to build software that solves business problems."
         }
         ]
 
