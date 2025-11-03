@@ -8,7 +8,7 @@ export default function Projects(){
             title: "InfoAutoCR",
             tag: "#Production App",
             icon: InfoAutoCRLT,
-            description: "Full-stack application serving 600+ active users monthly with 40% month-over-month growth. Built with React frontend, Node.js/Express backend, and PostgreSQL database. Features government data scraping using Puppeteer, complex fiscal calculations, and SEO-optimized performance. Deployed on Railway with automated CI/CD. This project really showed me the satisfaction of building something people genuinely find useful.",
+            description: "Full-stack application serving 1,200+ active users monthly with 15% month-over-month growth. Built with React frontend, Node.js/Express backend, and PostgreSQL database. Features government data scraping using Puppeteer, 2 main API endpoints, and SEO-optimized performance. Deployed via Railway and Cloudflare for server and network services respectively.",
             url: "https://autoinfocr.com/",
             tech: "React • Node.js • PostgreSQL • Railway"
         },
