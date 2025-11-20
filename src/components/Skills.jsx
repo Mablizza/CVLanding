@@ -9,34 +9,34 @@ export default function Skills(){
 
     const skillsArr = [
         {
-            title: "Full-Stack Development",
+            title: "Languages",
             icon: webDev,
-            description: "React, Node.js, Express, and modern JavaScript. I love building complete applications from database to user interface."
+            description: "JavaScript, HTML5, CSS, SQL and Visual Basic. But always looking to learn more."
         },
         {
-            title: "Database Architecture",
-            icon: uxDesign,
-            description: "PostgreSQL, MySQL, MongoDB. Complex data modeling, query optimization, and scalable database design."
-        },
-        {
-            title: "Performance & SEO",
+            title: "Frontend",
             icon: test,
-            description: "Code optimization, SEO implementation, and user experience tuning. My InfoAutoCR project is proof this stuff works!"
+            description: "React, Vite, Tailwind CSS, Responsive Design. Modern frameworks for building user interfaces."
         },
         {
-            title: "Data Processing",
-            icon: videoEdit,
-            description: "Web scraping with Puppeteer, API integrations, and real-time data processing. Love making messy data useful."
-        },
-        {
-            title: "Technical Leadership",
+            title: "Backend",
             icon: idea,
-            description: "Agile development, team coordination, and project delivery. Led developers through complex implementations at Dunu506."
+            description: "Node.js, Express, RESTful APIs, Web Scraping. Server-side technologies for scalable applications."
         },
         {
-            title: "Business Intelligence",
+            title: "Databases",
+            icon: uxDesign,
+            description: "PostgreSQL, MongoDB, MySQL, Database Migrations. Data modeling and optimization."
+        },
+        {
+            title: "Infrastructure",
+            icon: videoEdit,
+            description: "AWS, Railway, Heroku, Cloudflare, Git/GitHub. Cloud deployment and version control."
+        },
+        {
+            title: "Practices",
             icon: socialMedia,
-            description: "Data analysis, process optimization, and stakeholder communication. I like to build software that solves business problems."
+            description: "Agile, SEO Optimization, Performance Monitoring, and continuous improvement."
         }
         ]
 

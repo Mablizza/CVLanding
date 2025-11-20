@@ -17,13 +17,13 @@ export default function Hero(){
                 <div className="hero-text">
                     <p className="bold greenText"> About Me </p>
                     <h2> Julián Arias - Software Engineer</h2>
-                    <p> I'm a full-stack software engineer who builds applications that people actually use. 
-                        My latest project serves 600+ active users monthly and keeps growing. I love combining 
-                        technical problem-solving with business thinking - probably thanks to my finance background 
-                        where I spent years analyzing data and optimizing processes. Now I channel that analytical 
-                        mindset into building software solutions that deliver real value. Whether it's architecting 
-                        a database, optimizing performance, or leading a development team, I approach each challenge 
-                        with both technical precision and strategic thinking.
+                    <p> I'm a full-stack software engineer with experience building real-use applications. My latest
+                        project serves 1,300+ monthly users and growing. I love combining technical problem-solving 
+                        with business thinking - probably thanks to my finance background where I spent years 
+                        analyzing data and optimizing processes. Now I channel that analytical mindset into building 
+                        software solutions that deliver real value. Whether it's architecting a database, shipping a new
+                        feature, optimizing performance, or leading a development team, I approach each challenge with
+                        both technical know-how and strategic thinking.
                     </p>
                     <div className="hero-boxes">
                         <div className="hero-minibox">

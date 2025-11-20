@@ -170,10 +170,10 @@ body {
 
 .project-img{
   padding: 0;
-  margin: 0;
+  margin: 0rem 0rem 0rem 0rem;
   position: relative;
-  right: 10%;
-  bottom: 21%;
+  right: 11%;
+  bottom: 20%;
   height: 18rem;
 }
 
@@ -362,7 +362,9 @@ body {
   }
   .project-img{
     bottom: 10%;
-    left: 24%
+    justify-self: center;  
+    left: auto;  
+    right: auto; 
   }
   .project-img img{
     height: 22rem;

@@ -8,7 +8,7 @@ export default function Projects(){
             title: "InfoAutoCR",
             tag: "#Production App",
             icon: InfoAutoCRLT,
-            description: "Full-stack application serving 1,200+ active users monthly with 15% month-over-month growth. Built with React frontend, Node.js/Express backend, and PostgreSQL database. Features government data scraping using Puppeteer, 2 main API endpoints, and SEO-optimized performance. Deployed via Railway and Cloudflare for server and network services respectively.",
+            description: "Full-stack production application serving 1,300+ monthly users with 3,337 organic search clicks. Handles 150+ daily API requests with 99% uptime. Built with React, Node.js/Express, and PostgreSQL. Features concurrent request queue system with real-time status updates, zero-downtime database migrations, and financial calculation engine for vehicle transfer fees. Monetized through custom AdBanner system generating revenue from legal service providers. Deployed via Railway with Cloudflare network services.",
             url: "https://autoinfocr.com/",
             tech: "React • Node.js • PostgreSQL • Railway"
         },
@@ -16,7 +16,7 @@ export default function Projects(){
             title: "Dunu506",
             tag: "#Marketplace",
             icon: Dunu506,
-            description: "The project that started my programming journey! E-commerce marketplace built with React and Ruby on Rails, deployed on AWS. I led a team of 4 developers through Agile sprints, handling everything from database design to payment processing. It's currently in maintenance mode while I focus on my other projects, but it taught me so much about full-stack architecture and team leadership.",
+            description: "The project that started my programming journey! E-commerce marketplace built with React and Ruby on Rails, deployed on AWS. I led a team of 3 developers through Agile sprints, handling everything from database design to payment processing. It's currently in maintenance mode while I focus on my other projects, but it taught me so much about full-stack architecture and team leadership.",
             url: "https://www.dunu506.com",
             tech: "React • Ruby on Rails • PostgreSQL • AWS"
         },
