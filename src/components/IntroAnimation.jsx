@@ -4,12 +4,20 @@ import '../introAnimation.css';
 export default function IntroAnimation() {
     const [scrollProgress, setScrollProgress] = useState(0);
     const [animationComplete, setAnimationComplete] = useState(false);
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const [viewportDimensions, setViewportDimensions] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight,
+        aspectRatio: window.innerWidth / window.innerHeight
+    });
 
-    // Resize listener for mobile detection
+    // Resize listener for viewport tracking
     useEffect(() => {
         function handleResize() {
-            setIsMobile(window.innerWidth <= 768);
+            setViewportDimensions({
+                width: window.innerWidth,
+                height: window.innerHeight,
+                aspectRatio: window.innerWidth / window.innerHeight
+            });
         }
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
@@ -79,62 +87,71 @@ export default function IntroAnimation() {
 
     function getMarioPosition() {
         const stage = getAnimationStage();
+        const { width, height } = viewportDimensions;
+        
+        // Fixed anchor: Pipe is always centered at 50%
+        const pipeCenter = 50;
+        
+        // Calculate scale factors based on viewport (continuous scaling)
+        const widthScale = Math.max(0.7, Math.min(1.2, width / 1440));
+        const heightScale = Math.max(0.8, Math.min(1.1, height / 800));
+        
+        // Dynamic distances that scale with viewport
+        const safeDistanceFromPipe = 20 * widthScale;
+        const runningStartPos = -10;
+        const runningEndPos = pipeCenter - safeDistanceFromPipe;
+        const runningDistance = runningEndPos - runningStartPos;
+        
+        const groundLevel = 30;
+        
+        // Calculate pipe height as percentage of viewport to position Mario on top
+        let pipeHeightPx;
+        if (width <= 480) {
+            pipeHeightPx = 66;  // CSS: 59px
+        } else if (width <= 768) {
+            pipeHeightPx = 88;  // CSS: 88px
+        } else {
+            pipeHeightPx = 132; // CSS: 132px
+        }
+        
+        // Convert pipe height from pixels to percentage of viewport height
+        const pipeHeightPercent = (pipeHeightPx / height) * 100;
+        
+        // Mario stands on top of pipe: pipe bottom (30%) + pipe height
+        const pipeTopHeight = groundLevel + pipeHeightPercent;
+        
+        // Jump arc height scales with both dimensions
+        const arcHeight = 17 * widthScale * heightScale;
         
         if (stage === 'running') {
-            if (isMobile) {
-                // Mobile: shorter running distance, ends further from pipe
-                const leftPosition = -10 + (scrollProgress / 60) * 45; 
-                return { left: `${leftPosition}%`, bottom: '30%' };
-            }
-            // Desktop: original calculation
-            const leftPosition = -10 + (scrollProgress / 60) * 55;
-            return { left: `${leftPosition}%`, bottom: '30%' };
+            const leftPosition = runningStartPos + (scrollProgress / 60) * runningDistance;
+            return { left: `${leftPosition}%`, bottom: `${groundLevel}%` };
         }
         
         if (stage === 'jumping') {
-            if (isMobile) {
-                const leftPosition = 35 + ((scrollProgress - 60) / 15) * 15;
-                const jumpProgress = (scrollProgress - 60) / 15;
-                
-                // Jump from 30% to 37.2% with an arc
-                const startHeight = 30;  // End of running phase
-                const endHeight = 37.2;  // Standing position on pipe
-                const arcHeight = 12;    // How high above the path Mario jumps
-                
-                // Base path: linear interpolation from start to end
-                const basePath = startHeight + (endHeight - startHeight) * jumpProgress;
-                
-                // Arc peaks at middle of jump
-                const arc = Math.sin(jumpProgress * Math.PI) * arcHeight;
-                const jumpHeight = basePath + arc;
-                
-                return { left: `${leftPosition}%`, bottom: `${jumpHeight}%` };
-            }
-            // Desktop: original calculation
-            const leftPosition = 43 + ((scrollProgress - 60) / 15) * 5;
             const jumpProgress = (scrollProgress - 60) / 15;
-            const jumpHeight = 43 + (Math.sin(jumpProgress * Math.PI) * 20);
+            const leftPosition = runningEndPos + (jumpProgress * safeDistanceFromPipe);
+            
+            const startHeight = groundLevel;
+            const endHeight = pipeTopHeight;
+            
+            const basePath = startHeight + (endHeight - startHeight) * jumpProgress;
+            const arc = Math.sin(jumpProgress * Math.PI) * arcHeight;
+            const jumpHeight = basePath + arc;
+            
             return { left: `${leftPosition}%`, bottom: `${jumpHeight}%` };
         }
         
         if (stage === 'standing') {
-            if (isMobile) {
-                return { left: '50%', bottom: '37.2%' }; 
-            }
-            // Desktop
-            return { left: '50%', bottom: '47.5%' };
+            return { left: `${pipeCenter}%`, bottom: `${pipeTopHeight}%` };
         }
         
-        // Sinking stage - LOCK horizontal position
-        if (isMobile) {
-            const sinkProgress = (scrollProgress - 85) / 15;
-            const bottomPosition = 37.2 - (sinkProgress * 20); // Slower descent: from 37.2% to ~17%
-            return { left: '50%', bottom: `${bottomPosition}%` }; // Keep left locked at 50%
-        }
-        // Desktop
+        // Sinking stage
         const sinkProgress = (scrollProgress - 85) / 15;
-        const bottomPosition = 50 - (sinkProgress * 27); // Slower descent: from 52% to ~25%
-        return { left: '50%', bottom: `${bottomPosition}%` };
+        const descentDistance = 27 * heightScale;
+        const bottomPosition = pipeTopHeight - (sinkProgress * descentDistance);
+        
+        return { left: `${pipeCenter}%`, bottom: `${bottomPosition}%` };
     }
 
     const stage = getAnimationStage();
