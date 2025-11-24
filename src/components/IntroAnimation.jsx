@@ -28,6 +28,8 @@ export default function IntroAnimation() {
         document.body.style.overflow = 'hidden';
         
         let wheelProgress = 0;
+        let touchStartY = 0;
+        let touchProgress = 0;
         
         function handleWheel(e) {
             e.preventDefault();
@@ -47,16 +49,58 @@ export default function IntroAnimation() {
                 document.documentElement.style.overflow = 'auto';
                 
                 window.removeEventListener('wheel', handleWheel);
+                window.removeEventListener('touchstart', handleTouchStart);
+                window.removeEventListener('touchmove', handleTouchMove);
                 
                 setTimeout(() => {
                     setAnimationComplete(true);
                 }, 500);
             }
-}
+        }
+        
+        function handleTouchStart(e) {
+            touchStartY = e.touches[0].clientY;
+        }
+        
+        function handleTouchMove(e) {
+            e.preventDefault();
+            
+            const touchY = e.touches[0].clientY;
+            const deltaY = touchStartY - touchY; // Positive when swiping up
+            
+            // Accumulate touch movement
+            touchProgress += deltaY;
+            touchStartY = touchY; // Update for next move
+            
+            // Calculate progress (0 to 100)
+            const maxTouch = 3000;
+            const progress = Math.min(Math.max((touchProgress / maxTouch) * 100, 0), 100);
+            setScrollProgress(progress);
+            
+            if (progress >= 100) {
+                //re-enable scrolling immediately after animation ends
+                document.body.style.overflow = 'auto';
+                document.body.style.position = 'static';
+                document.documentElement.style.overflow = 'auto';
+                
+                window.removeEventListener('wheel', handleWheel);
+                window.removeEventListener('touchstart', handleTouchStart);
+                window.removeEventListener('touchmove', handleTouchMove);
+                
+                setTimeout(() => {
+                    setAnimationComplete(true);
+                }, 500);
+            }
+        }
 
         window.addEventListener('wheel', handleWheel, { passive: false });
+        window.addEventListener('touchstart', handleTouchStart, { passive: false });
+        window.addEventListener('touchmove', handleTouchMove, { passive: false });
+        
         return () => {
             window.removeEventListener('wheel', handleWheel);
+            window.removeEventListener('touchstart', handleTouchStart);
+            window.removeEventListener('touchmove', handleTouchMove);
             document.body.style.overflow = 'auto';
         };
     }, []);
