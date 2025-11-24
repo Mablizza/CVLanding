@@ -1,3 +1,4 @@
+import IntroAnimation from "./components/IntroAnimation.jsx"
 import Hero from "./components/Hero.jsx"
 import Skills from "./components/Skills.jsx"
 import Projects from "./components/Projects.jsx"
@@ -7,6 +8,7 @@ function App() {
 
   return (
     <>
+      <IntroAnimation />
       <Hero />
       <Skills />
       <Projects />
