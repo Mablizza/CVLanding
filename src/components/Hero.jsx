@@ -10,7 +10,7 @@ export default function Hero(){
         <>
             <div className="section-header">
                 <p className="greyText">BIOGRAPGHY</p>
-                <h1>A Small Intro</h1>
+                <h1>A Brief Intro</h1>
             </div>
             <div className="hero-section">
                 <img className="hero-img" src={myphoto} alt="a photo of me" />
