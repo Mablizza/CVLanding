@@ -73,7 +73,7 @@ export default function IntroAnimation() {
             touchStartY = touchY; // Update for next move
             
             // Calculate progress (0 to 100)
-            const maxTouch = 3000;
+            const maxTouch = 1000; // toggle mobile swipe sensitivity --> 1000 for~3-4 swipes; 800 for~2-3 swipes (very sensitive)
             const progress = Math.min(Math.max((touchProgress / maxTouch) * 100, 0), 100);
             setScrollProgress(progress);
             
